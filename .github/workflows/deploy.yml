@@ -1,0 +1,28 @@
+name: Cloud Automation Workflow
+
+# This block tells the cloud exactly when to trigger your workflow
+on:
+  push:
+    branches:
+      - main  # Change to "master" or "develop" depending on your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Runs in a fresh cloud virtual machine
+    
+    steps:
+      # Step 1: Clones your pushed code into the cloud machine
+      - name: Checkout Code
+        uses: actions/checkout@v4 
+
+      # Step 2: Set up your environment (Example: Node.js)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-node-version: '20'
+
+      # Step 3: Run your actual build, test, or deployment commands
+      - name: Install and Run Tests
+        run: |
+          npm install
+          npm run test
