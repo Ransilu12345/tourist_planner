@@ -25,3 +25,7 @@ Fixed the README/seed.py output mismatch noted on 2026-08-01: swapped the order 
 ## 2026-08-07
 
 Noticed TC-01 in TEST_CHECKLIST.md ("Login with correct credentials", admin/admin123) is filed under the "Tourist flow" table even though it's clearly an admin login case -- worth moving to the admin section next time that file gets renumbered (see the 2026-07-31 note on the TC-10/TC-23-25 gap).
+
+## 2026-08-08
+
+Noticed the repo's git history only tracks `DEVLOG.md`, `README.md`, and `.github/workflows/deploy.yml` — `TEST_CHECKLIST.md`, `backend/`, and `frontend/` (all referenced by README, e.g. the `[TEST_CHECKLIST.md]` link) were never actually committed, so that link 404s on GitHub. Worth `git add`-ing the real source tree next time it's touched.
