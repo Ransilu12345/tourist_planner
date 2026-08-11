@@ -29,3 +29,7 @@ Noticed TC-01 in TEST_CHECKLIST.md ("Login with correct credentials", admin/admi
 ## 2026-08-08
 
 Noticed the repo's git history only tracks `DEVLOG.md`, `README.md`, and `.github/workflows/deploy.yml` — `TEST_CHECKLIST.md`, `backend/`, and `frontend/` (all referenced by README, e.g. the `[TEST_CHECKLIST.md]` link) were never actually committed, so that link 404s on GitHub. Worth `git add`-ing the real source tree next time it's touched.
+
+## 2026-08-11
+
+Re-checked `.github/workflows/deploy.yml`: the `node-node-version` typo from 2026-08-05 is still there, still silently ignoring the Node 20 pin. Still can't fix it directly — push token has no `workflow` scope — so leaving it as a standing reminder here until someone edits it manually via the GitHub UI.
