@@ -33,3 +33,7 @@ Noticed the repo's git history only tracks `DEVLOG.md`, `README.md`, and `.githu
 ## 2026-08-11
 
 Re-checked `.github/workflows/deploy.yml`: the `node-node-version` typo from 2026-08-05 is still there, still silently ignoring the Node 20 pin. Still can't fix it directly — push token has no `workflow` scope — so leaving it as a standing reminder here until someone edits it manually via the GitHub UI.
+
+## 2026-08-14
+
+Counted the route decorators in `backend/routes/` and got 20 operations under `/api` (6 places, 5 plans, 5 admin, 4 categories), but README's "API overview (Swagger)" section still claims **16** — stale since routes were added. Updated that number to 20 in the same commit.

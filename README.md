@@ -108,4 +108,4 @@ See [`TEST_CHECKLIST.md`](TEST_CHECKLIST.md) for step-by-step browser checks (to
 
 ## API overview (Swagger)
 
-With the backend running, OpenAPI lists **16** operations under `/api` (places, categories, admin, visit plans) plus **`GET /`** for health. Open [http://localhost:8000/docs](http://localhost:8000/docs) to try requests interactively.
+With the backend running, OpenAPI lists **20** operations under `/api` (places, categories, admin, visit plans) plus **`GET /`** for health. Open [http://localhost:8000/docs](http://localhost:8000/docs) to try requests interactively.
