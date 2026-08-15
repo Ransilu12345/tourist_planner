@@ -37,3 +37,7 @@ Re-checked `.github/workflows/deploy.yml`: the `node-node-version` typo from 202
 ## 2026-08-14
 
 Counted the route decorators in `backend/routes/` and got 20 operations under `/api` (6 places, 5 plans, 5 admin, 4 categories), but README's "API overview (Swagger)" section still claims **16** — stale since routes were added. Updated that number to 20 in the same commit.
+
+## 2026-08-15
+
+`frontend/src/components/MapboxRoute.jsx` and `MapboxMultiStopRoute.jsx` both do `import mapboxgl from 'mapbox-gl'`, but `mapbox-gl` and `@mapbox/mapbox-sdk` are only declared in the *root* `package.json` — `frontend/package.json` lists just `leaflet`/`react-leaflet`. So the README's "from `frontend/`: `npm install`" path leaves those two route views unresolvable; the deps should move into `frontend/package.json`. Also updated README's tech-stack row to name Mapbox GL JS alongside Leaflet, since both are actually in use.

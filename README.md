@@ -82,7 +82,7 @@ Change the password in production and restrict admin access appropriately.
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | React 18+, Vite, React Router, Axios, Leaflet |
+| Frontend | React 18+, Vite, React Router, Axios, Leaflet, Mapbox GL JS |
 | Backend | FastAPI, Uvicorn, Pydantic v2 |
 | Database | MySQL 8.0, SQLAlchemy 2.x |
 | Admin auth | JWT (Bearer), bcrypt |
