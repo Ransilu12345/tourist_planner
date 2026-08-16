@@ -23,6 +23,7 @@ From the `backend/` directory:
 2. Configure **`.env`** in `backend/` (adjust for your MySQL instance):
 
    - `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT`, `DB_NAME` (default database name: `tourist_planner`)
+   - Also read by the app: `ADMIN_EMAIL` (the Firebase account granted admin access), `FIREBASE_CREDENTIALS_PATH` (defaults to `firebase-credentials.json`), and `MAPBOX_TOKEN` (used by `routes/places.py`)
 
 3. Create the MySQL database (empty schema is fine; tables are created on app startup):
 
@@ -85,7 +86,7 @@ Change the password in production and restrict admin access appropriately.
 | Frontend | React 18+, Vite, React Router, Axios, Leaflet, Mapbox GL JS |
 | Backend | FastAPI, Uvicorn, Pydantic v2 |
 | Database | MySQL 8.0, SQLAlchemy 2.x |
-| Admin auth | JWT (Bearer), bcrypt |
+| Admin auth | Firebase ID tokens (Bearer), verified via `firebase-admin` |
 
 ## Seeded places (10)
 

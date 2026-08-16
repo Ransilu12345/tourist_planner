@@ -41,3 +41,7 @@ Counted the route decorators in `backend/routes/` and got 20 operations under `/
 ## 2026-08-15
 
 `frontend/src/components/MapboxRoute.jsx` and `MapboxMultiStopRoute.jsx` both do `import mapboxgl from 'mapbox-gl'`, but `mapbox-gl` and `@mapbox/mapbox-sdk` are only declared in the *root* `package.json` — `frontend/package.json` lists just `leaflet`/`react-leaflet`. So the README's "from `frontend/`: `npm install`" path leaves those two route views unresolvable; the deps should move into `frontend/package.json`. Also updated README's tech-stack row to name Mapbox GL JS alongside Leaflet, since both are actually in use.
+
+## 2026-08-16
+
+Grepped `backend/` for `bcrypt`/`jwt` and found zero hits — admin auth is actually Firebase ID tokens verified through `firebase_admin_setup.verify_firebase_token`, with `auth.py` gating on an `ADMIN_EMAIL` match, so README's tech-stack row claiming "JWT (Bearer), bcrypt" was wrong; corrected it in this commit. Also noticed the backend `.env` list only documents the `DB_*` vars while the code additionally reads `ADMIN_EMAIL`, `FIREBASE_CREDENTIALS_PATH` and `MAPBOX_TOKEN`, so added those to the same bullet. Still stale and left for another day: the "Default admin credentials admin/admin123" section, which no longer reflects a Firebase-based login.
