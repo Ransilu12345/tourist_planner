@@ -72,12 +72,12 @@ The dev server proxies `/api` to `http://localhost:8000` (see `vite.config.js`).
 
 `GET /` returns a small JSON health payload with API version.
 
-## Default admin credentials
+## Default admin account
 
-- **Username:** `admin`  
-- **Password:** `admin123`  
+- **Admin account:** the Firebase account whose email matches `ADMIN_EMAIL` (defaults to `admin@touristplanner.lk`)
+- **Password:** none — `backend/scripts/seed.py` seeds the admin row with `password_hash="firebase-auth"`, and login is handled entirely by Firebase
 
-Change the password in production and restrict admin access appropriately.
+Restrict admin access by controlling who owns that Firebase account and by setting `ADMIN_EMAIL` appropriately in production.
 
 ## Tech stack
 

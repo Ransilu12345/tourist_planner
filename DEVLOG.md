@@ -45,3 +45,7 @@ Counted the route decorators in `backend/routes/` and got 20 operations under `/
 ## 2026-08-16
 
 Grepped `backend/` for `bcrypt`/`jwt` and found zero hits — admin auth is actually Firebase ID tokens verified through `firebase_admin_setup.verify_firebase_token`, with `auth.py` gating on an `ADMIN_EMAIL` match, so README's tech-stack row claiming "JWT (Bearer), bcrypt" was wrong; corrected it in this commit. Also noticed the backend `.env` list only documents the `DB_*` vars while the code additionally reads `ADMIN_EMAIL`, `FIREBASE_CREDENTIALS_PATH` and `MAPBOX_TOKEN`, so added those to the same bullet. Still stale and left for another day: the "Default admin credentials admin/admin123" section, which no longer reflects a Firebase-based login.
+
+## 2026-08-18
+
+Cleared the last item flagged on 2026-08-16: README's "Default admin credentials" section still advertised `admin`/`admin123`, but `backend/scripts/seed.py` seeds the admin row with `password_hash="firebase-auth"` and pulls the account from `ADMIN_EMAIL` (default `admin@touristplanner.lk`), so there is no password at all. Rewrote it as "Default admin account" describing the Firebase/`ADMIN_EMAIL` setup. `TEST_CHECKLIST.md` still references admin/admin123 in TC-01 and the login checklist — next thing to fix there.
