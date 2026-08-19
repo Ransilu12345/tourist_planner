@@ -49,3 +49,7 @@ Grepped `backend/` for `bcrypt`/`jwt` and found zero hits — admin auth is actu
 ## 2026-08-18
 
 Cleared the last item flagged on 2026-08-16: README's "Default admin credentials" section still advertised `admin`/`admin123`, but `backend/scripts/seed.py` seeds the admin row with `password_hash="firebase-auth"` and pulls the account from `ADMIN_EMAIL` (default `admin@touristplanner.lk`), so there is no password at all. Rewrote it as "Default admin account" describing the Firebase/`ADMIN_EMAIL` setup. `TEST_CHECKLIST.md` still references admin/admin123 in TC-01 and the login checklist — next thing to fix there.
+
+## 2026-08-19
+
+Finished the TEST_CHECKLIST.md cleanup queued yesterday: TC-01's Input column and the admin-login checkbox both still said `admin / admin123`, which no longer exists now that auth goes through Firebase, so both now point at the `ADMIN_EMAIL` account instead. Also committing `TEST_CHECKLIST.md` itself for the first time — the 2026-08-08 note flagged that README links to it but the file was never tracked, so that link has been 404ing on GitHub.
