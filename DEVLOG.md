@@ -53,3 +53,7 @@ Cleared the last item flagged on 2026-08-16: README's "Default admin credentials
 ## 2026-08-19
 
 Finished the TEST_CHECKLIST.md cleanup queued yesterday: TC-01's Input column and the admin-login checkbox both still said `admin / admin123`, which no longer exists now that auth goes through Firebase, so both now point at the `ADMIN_EMAIL` account instead. Also committing `TEST_CHECKLIST.md` itself for the first time — the 2026-08-08 note flagged that README links to it but the file was never tracked, so that link has been 404ing on GitHub.
+
+## 2026-08-20
+
+README's Prerequisites table asked for **Node.js 18+**, but `frontend/package.json` pins `vite: ^8.0.1`, which won't install or run on Node 18 — and `.github/workflows/deploy.yml` already sets up Node 20, so CI and the docs disagreed. Bumped the table to 20+ in this commit. Also corrected the tech-stack row from "React 18+, Vite" to "React 19, Vite 8", since the frontend deps are `react ^19.2.4` / `vite ^8.0.1`.

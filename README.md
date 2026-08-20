@@ -6,7 +6,7 @@ A full-stack web app for discovering places within **25 km** of a fixed referenc
 
 | Tool | Version |
 |------|---------|
-| **Node.js** | 18+ |
+| **Node.js** | 20+ |
 | **Python** | 3.11+ |
 | **MySQL** | 8.0 |
 
@@ -83,7 +83,7 @@ Restrict admin access by controlling who owns that Firebase account and by setti
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | React 18+, Vite, React Router, Axios, Leaflet, Mapbox GL JS |
+| Frontend | React 19, Vite 8, React Router, Axios, Leaflet, Mapbox GL JS |
 | Backend | FastAPI, Uvicorn, Pydantic v2 |
 | Database | MySQL 8.0, SQLAlchemy 2.x |
 | Admin auth | Firebase ID tokens (Bearer), verified via `firebase-admin` |
