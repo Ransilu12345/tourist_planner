@@ -57,3 +57,7 @@ Finished the TEST_CHECKLIST.md cleanup queued yesterday: TC-01's Input column an
 ## 2026-08-20
 
 README's Prerequisites table asked for **Node.js 18+**, but `frontend/package.json` pins `vite: ^8.0.1`, which won't install or run on Node 18 — and `.github/workflows/deploy.yml` already sets up Node 20, so CI and the docs disagreed. Bumped the table to 20+ in this commit. Also corrected the tech-stack row from "React 18+, Vite" to "React 19, Vite 8", since the frontend deps are `react ^19.2.4` / `vite ^8.0.1`.
+
+## 2026-08-21
+
+`.github/workflows/deploy.yml` runs `npm install && npm run test` from the repo root, but the root `package.json` has no `scripts` block at all (just three deps: `mapbox-gl`, `@mapbox/mapbox-sdk`, `firebase`) — so that step fails with "Missing script: test". The real suite is `vitest` in `frontend/package.json`, backing 10 `*.test.jsx`/`*.test.js` files under `frontend/src/`, so the job needs a `working-directory: ./frontend`. Can't patch the workflow from here (push token has no `workflow` scope, same blocker as 2026-08-11), but README's testing section only ever mentioned the manual checklist, so documented the automated suite there in this commit.

@@ -103,9 +103,15 @@ Restrict admin access by controlling who owns that Firebase account and by setti
 | 9 | Galle Face Green | Leisure |
 | 10 | Colombo Port City | Leisure |
 
-## Manual testing
+## Testing
 
-See [`TEST_CHECKLIST.md`](TEST_CHECKLIST.md) for step-by-step browser checks (tourist and admin flows).
+Automated frontend tests (Vitest + Testing Library), from the `frontend/` directory:
+
+```bash
+npm run test
+```
+
+For manual verification, see [`TEST_CHECKLIST.md`](TEST_CHECKLIST.md) for step-by-step browser checks (tourist and admin flows).
 
 ## API overview (Swagger)
 
